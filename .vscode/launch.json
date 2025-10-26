@@ -1,0 +1,18 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: 天气预警系统",
+            "type": "python",
+            "request": "launch",
+            "program": "src/main.py",
+            "args": [
+                "--city",
+                "北京"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

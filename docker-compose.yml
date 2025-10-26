@@ -1,0 +1,23 @@
+services:
+  weather-dev:
+    build: .
+    container_name: weather-alert-dev
+    volumes:
+      - .:/app
+      - ./data:/app/data
+    env_file:
+      - .env
+    working_dir: /app
+    stdin_open: true
+    tty: true
+    command: tail -f /dev/null
+
+  weather-test:
+    build: .
+    container_name: weather-alert-test
+    volumes:
+      - .:/app
+    env_file:
+      - .env  # 使用主环境文件，或者创建 .env.test
+    working_dir: /app
+    command: ["pytest", "tests/", "-v"]
