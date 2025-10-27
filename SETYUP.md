@@ -9,6 +9,6 @@
 ### 2. 克隆项目并配置
 ```bash
 git clone <repository-url>
-cd weather-alert-system
+cd weather-forecasting-system
 cp .env.example .env
 # 编辑 .env 文件，填入你的API Key

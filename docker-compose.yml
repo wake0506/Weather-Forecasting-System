@@ -1,7 +1,7 @@
 services:
   weather-dev:
     build: .
-    container_name: weather-alert-dev
+    container_name: weather-forecasting-dev
     volumes:
       - .:/app
       - ./data:/app/data
@@ -14,7 +14,7 @@ services:
 
   weather-test:
     build: .
-    container_name: weather-alert-test
+    container_name: weather-forecasting-test
     volumes:
       - .:/app
     env_file:

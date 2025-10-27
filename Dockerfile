@@ -1,29 +1,42 @@
-FROM python:3.12-slim
+FROM python:3.11-slim
 
 WORKDIR /app
 
-# 安装系统依赖（开发工具）
+# 设置环境变量
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1
+
+# 安装系统依赖
 RUN apt-get update && apt-get install -y \
-    git \
-    vim \
-    curl \
-    wget \
-    tree \
-    && rm -rf /var/lib/apt/lists/*
+    gcc \
+    && rm -rf /var/lib/apt/lists/* \
+    && apt-get clean
 
 # 复制依赖文件
 COPY requirements.txt .
 
 # 安装Python依赖
-RUN pip install --no-cache-dir -r requirements.txt
-RUN pip install --no-cache-dir ipython
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt
 
-# 创建必要的目录
-RUN mkdir -p data/cache data/logs data/reports
+# 复制应用代码
+COPY src/ ./src/
+COPY config/ ./config/
+COPY data/ ./data/
 
-# 设置环境变量
-ENV PYTHONPATH=/app/src
-ENV PYTHONUNBUFFERED=1
+# 创建非root用户
+RUN groupadd -r app && useradd -r -g app app && \
+    chown -R app:app /app
 
-# 开发模式 - 保持容器运行
-CMD ["tail", "-f", "/dev/null"]
+# 切换到非root用户
+USER app
+
+# 定义环境变量
+ENV PYTHONPATH=/app
+
+# 健康检查
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+    CMD python -c "import sys; sys.exit(0)"
+
+# 运行应用
+CMD ["python", "src/main.py", "--city", "Beijing"]
