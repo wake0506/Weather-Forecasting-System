@@ -1,0 +1,2 @@
+origin	https://github.com/wake0506/Weather-Forecasting-System.git (fetch)
+origin	https://github.com/wake0506/Weather-Forecasting-System.git (push)
