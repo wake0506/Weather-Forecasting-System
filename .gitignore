@@ -66,3 +66,4 @@ docker-compose.override.yml
 # Database
 *.sqlite3
 data/*.db
+/data
