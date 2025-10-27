@@ -1,9 +1,10 @@
-import requests
+import requests  # noqa: F401
 import os
 from typing import Dict
 from dotenv import load_dotenv
 
 load_dotenv()
+
 
 def get_weather_data(city: str) -> Dict:
     """
