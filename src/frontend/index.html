@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天气预报</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>���️ 天气预报</h1>
+        </header>
+        
+        <main>
+            <div class="search-box">
+                <input type="text" id="cityInput" placeholder="输入城市名称...">
+                <button id="searchBtn">查询</button>
+            </div>
+            
+            <div class="weather-card hidden" id="weatherCard">
+                <div class="city-name" id="cityName"></div>
+                <div class="temperature" id="temperature"></div>
+                <div class="condition" id="condition"></div>
+                <div class="details">
+                    <div class="detail">
+                        <span>��� 湿度</span>
+                        <span id="humidity"></span>
+                    </div>
+                    <div class="detail">
+                        <span>��� 风速</span>
+                        <span id="windSpeed"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="alert hidden" id="alert"></div>
+        </main>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
