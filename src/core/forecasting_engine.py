@@ -29,7 +29,7 @@ class ForecastingEngine:
         temperature = weather_data.get("temperature", 0)
         humidity = weather_data.get("humidity", 0)
         wind_speed = weather_data.get("wind_speed", 0)
-        condition = weather_data.get("condition", "")
+       
 
         forecasts = []
 

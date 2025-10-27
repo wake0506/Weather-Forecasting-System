@@ -1,4 +1,4 @@
-import pytest
+#import pytest
 from src.core.weather_api import get_weather_data
 
 
