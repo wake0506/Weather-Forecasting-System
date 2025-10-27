@@ -22,7 +22,7 @@ RUN pip install --no-cache-dir --upgrade pip && \
 # 复制应用代码
 COPY src/ ./src/
 COPY config/ ./config/
-COPY data/ ./data/
+#COPY data/ ./data/
 
 # 创建非root用户
 RUN groupadd -r app && useradd -r -g app app && \
