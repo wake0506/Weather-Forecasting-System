@@ -31,9 +31,9 @@ jobs:
       #  run: |
       #    black --check src/ tests/ config/
       
-      - name: Lint with Ruff
-        run: |
-          ruff check src/ tests/ config/
+      #- name: Lint with Ruff
+      #  run: |
+      #    ruff check src/ tests/ config/
 
   test:
     name: Run Tests

@@ -1,4 +1,4 @@
-#import requests
+import requests
 import os
 from typing import Dict
 from dotenv import load_dotenv
