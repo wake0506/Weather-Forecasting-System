@@ -18,8 +18,8 @@ COPY src/ ./src/
 COPY config/ ./config/
 
 # 健壮的 data 目录复制 - 使用条件检查
-RUN mkdir -p /app/data
-COPY data/ /app/data/ 2>/dev/null || echo "Warning: data directory copy failed or empty, continuing..."
+#RUN mkdir -p /app/data
+#COPY data/ /app/data/ 2>/dev/null || echo "Warning: data directory copy failed or empty, continuing..."
 
 # 创建非root用户
 RUN useradd -m -r appuser && \
