@@ -1,6 +1,4 @@
 Production Environment Model Selection
-Selected Run Version: run_20240520_ensemble_v2
-
 Selection Rationale:
 This ensemble model achieves the optimal balance between prediction accuracy and computational efficiency. By combining multiple weather prediction algorithms through weighted averaging, it demonstrates stable performance across various weather conditions while maintaining reasonable inference times suitable for real-time weather forecasting requirements.
 
